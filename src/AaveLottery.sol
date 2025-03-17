@@ -57,6 +57,7 @@ contract Aavelottery{
             0,
             0,
             address(0),
+            0,
             0
         );
     }
@@ -140,7 +141,7 @@ contract Aavelottery{
             uint256 aTokenBalance = Rounds[currentID].scaledBalanceStake/ index;
             uint256 aaveAmount = aave.withdraw(address(underlying), aTokenBalance, address(this));
             
-            rounds[currentID].award = aaveAmount - Rounds[currentId].totalStake;
+            Rounds[currentID].award = aaveAmount - Rounds[currentID].totalStake;
 
         
 
